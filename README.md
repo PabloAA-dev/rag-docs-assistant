@@ -1,4 +1,5 @@
 # RAG Docs Assistant
+**Live demo:** https://rag-docs-assistant-jvb6tnzaknf2tj2xjptsbg.streamlit.app/
 
 Ask questions about the textbook *Dive into Deep Learning* and get answers with page citations.
 
