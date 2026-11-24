@@ -3,9 +3,10 @@ import chromadb
 
 PDF_PATH = "data/2106.11342v5.pdf"
 START_PAGE = 40
-END_PAGE = 1185  # small test first; later we'll make this 1185
-CHUNK_SIZE = 1000  # letters per piece
-OVERLAP = 200  # letters that neighbor pieces share
+END_PAGE = 1185
+CHUNK_SIZE = 500  # letters per piece
+OVERLAP = 100  # letters that neighbor pieces share
+COLLECTION = "book_500_100"  # the name of this box
 
 
 def split_text(text, size, overlap):
@@ -21,7 +22,7 @@ def split_text(text, size, overlap):
 
 doc = pymupdf.open(PDF_PATH)
 client = chromadb.PersistentClient(path="data/chroma_db")
-collection = client.get_or_create_collection("book")
+collection = client.get_or_create_collection(COLLECTION)
 
 for page_number in range(START_PAGE, END_PAGE):
     text = doc[page_number].get_text()
