@@ -8,11 +8,11 @@ claude = Anthropic()
 MODEL = "claude-haiku-5-5"
 
 client = chromadb.PersistentClient(path="data/chroma_db")
-collection = client.get_collection("book")
+collection = client.get_collection("book_500_100")
 
 
 def ask(question):
-    results = collection.query(query_texts=[question], n_results=5)
+    results = collection.query(query_texts=[question], n_results=10)
     pieces = results["documents"][0]
     pages = [m["page"] for m in results["metadatas"][0]]
 

@@ -2,7 +2,8 @@ import chromadb
 from questions import QUESTIONS
 
 client = chromadb.PersistentClient(path="data/chroma_db")
-collection = client.get_collection("book")
+COLLECTION = "book_500_100"
+collection = client.get_collection(COLLECTION)
 
 TOP_K = 10
 hits = 0
