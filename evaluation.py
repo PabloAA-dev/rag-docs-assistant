@@ -4,7 +4,7 @@ from questions import QUESTIONS
 client = chromadb.PersistentClient(path="data/chroma_db")
 collection = client.get_collection("book")
 
-TOP_K = 5
+TOP_K = 10
 hits = 0
 
 for item in QUESTIONS:
