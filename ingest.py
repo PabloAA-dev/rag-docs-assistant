@@ -21,7 +21,7 @@ def split_text(text, size, overlap):
 
 
 doc = pymupdf.open(PDF_PATH)
-client = chromadb.PersistentClient(path="data/chroma_db")
+client = chromadb.PersistentClient(path="demo_db")
 collection = client.get_or_create_collection(COLLECTION)
 
 for page_number in range(START_PAGE, END_PAGE):

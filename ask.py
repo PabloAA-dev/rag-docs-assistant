@@ -7,7 +7,7 @@ claude = Anthropic()
 
 MODEL = "claude-haiku-5-5"
 
-client = chromadb.PersistentClient(path="data/chroma_db")
+client = chromadb.PersistentClient(path="demo_db")
 collection = client.get_collection("book_500_100")
 
 
