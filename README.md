@@ -21,6 +21,22 @@ I hand-labeled 20 questions with the PDF page that best answers each one. A ques
 | 10 | 18/20 | 90% |
 | 15 | 20/20 | 100% |
 
+### Smaller chunks (500 characters, 100 overlap)
+
+I re-ran the same 20 questions with smaller chunks:
+
+| Pieces retrieved (K) | Score |
+|---|---|
+| 3 | 16/20 (80%) |
+| 5 | 17/20 (85%) |
+| 8 | 19/20 (95%) |
+| 10 | 20/20 (100%) |
+| 15 | 20/20 (100%) |
+
+500-character chunks reach 20/20 at K=10, while 1,000-character chunks needed K=15. That is about one-third of the context text (10 x 500 characters vs. 15 x 1,000), so answers are cheaper and less noisy. The app now uses 500/100 with K=10.
+
+Caveats: only 20 questions, I tuned the settings on the same 20, and this measures whether search finds the right page, not whether the final answer is good.
+
 Notes and limitations:
 - Only 20 questions, and I tuned top-K on the same set, so treat the numbers as indicative.
 - This measures retrieval only, not the quality of Claude's final answers.
